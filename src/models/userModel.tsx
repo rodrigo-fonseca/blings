@@ -11,7 +11,7 @@ function map(users: RawUserI[]): UserI[] {
       rawPhone: user.phone_number,
       nameLowerCase: _lowerCase(user.name),
       phone: _parsePhone(user.phone_number),
-      age: _getAge(new Date(_parseAge(user.birthday))),
+      age: _getAge(_formatAge(user.birthday)),
     };
   });
 }
@@ -21,6 +21,10 @@ function _getAge(birthday: Date): string {
   const ageDate = new Date(ageDifMs);
 
   return String(Math.abs(ageDate.getUTCFullYear() - 1970));
+}
+
+function _formatAge(birthday: string): Date {
+  return new Date(_parseAge(birthday));
 }
 
 function _parseAge(birthday: string): string {
