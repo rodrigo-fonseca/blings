@@ -5,6 +5,6 @@
 
 ## Stack
 
-React
-Typescript
-Bootstrap
+1. React
+2. Typescript
+3. Bootstrap
